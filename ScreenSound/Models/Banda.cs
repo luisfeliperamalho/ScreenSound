@@ -1,6 +1,8 @@
-﻿namespace ScreenSound.Models;
+﻿using ScreenSound.Menus;
 
-internal class Banda
+namespace ScreenSound.Models;
+
+internal class Banda : IAvaliavel
 {
     private List<Album> albuns = new List<Album>();
     private List<Avaliacao> notas = new List<Avaliacao>();
@@ -19,6 +21,8 @@ internal class Banda
             else return notas.Average(a => a.Nota);
         }
     }
+
+    public String? Resumo { get; set; }
 
     public List<Album> Albuns => albuns;
 
