@@ -17,15 +17,15 @@ internal class MenuRegistrarBanda : Menu
         bandasRegistradas.Add(nomeDaBanda, banda);
 
 
-        var client = new OpenAIAPI("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");
+        //var client = new OpenAIAPI("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");
 
-        var chat = client.Chat.CreateConversation();
+        //var chat = client.Chat.CreateConversation();
 
-        chat.AppendSystemMessage($"Resuma a banda {nomeDaBanda} em 1 parágrafo. Adote um estilo informal.");
+        //chat.AppendSystemMessage($"Resuma a banda {nomeDaBanda} em 1 parágrafo. Adote um estilo informal.");
 
-        string resposta = chat.GetResponseFromChatbotAsync().GetAwaiter().GetResult();
-        banda.Resumo = resposta;
-        Console.WriteLine(resposta);
+        //string resposta = chat.GetResponseFromChatbotAsync().GetAwaiter().GetResult();
+        //banda.Resumo = resposta;
+        //Console.WriteLine(resposta);
 
 
         Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso!");
