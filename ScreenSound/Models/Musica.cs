@@ -10,6 +10,10 @@ internal class Musica
         Nome = nome;
     }
 
+    private string[] tonalidades = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"};
+
+
+
     [JsonPropertyName("song")]
     public string? Nome { get; set; }
     public Banda? Artista { get; set; }
@@ -20,6 +24,17 @@ internal class Musica
     public bool Disponivel { get; set; }
     [JsonPropertyName("genre")]
     public string Genero { get; set; }
+
+    [JsonPropertyName("key")]
+    public int Key { get; set; }
+
+    public string Tonalidade
+    {
+        get
+        {
+            return tonalidades[Key];
+        }
+    }
     public string DescricaoResumida => $"A música {Nome} pertence à banda {Artista}";
 
     public void ExibirFichaTecnica()
@@ -42,6 +57,7 @@ internal class Musica
         Console.WriteLine($"Música: {Nome}");
         Console.WriteLine($"Duração: {Duracao}");
         Console.WriteLine($"Genero: {Genero}");
+        Console.WriteLine($"Tonalidade: {Tonalidade}");
         Console.WriteLine($"**********************");
     }
 }
